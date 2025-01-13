@@ -13,24 +13,32 @@ const LoginPage = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [inputValue,setInputValue] = useState("");
-  const [match,setMatch] = useState(false);
+  const [match,setMatch] = useState();
+
+  const userValue = 'abcd';
+  const userPassword = '1234';
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  const username = "abcd"
-
-  const handleLogin = (e) =>{
-       let value = e.target.value;
-        setInputValue(value)
-        setMatch(value === username)
-  };
+  const handleLogin = (event) =>{
+       setInputValue(event.target.value);
+  }
+  const handlePassword = (e) =>{
+    setMatch(e.target.value);
+  }
 
   const handleSubmit = () =>{
-      
+     if((inputValue === userValue) && (match === userPassword)){
+      alert("Login successfully")
+     }
+     else{
+      alert("username or password mismatch")
+     }
   }
-   
+
+  
 
   return (
     <div className=" h-screen w-screen flex flex-col   items-center">
@@ -75,6 +83,8 @@ const LoginPage = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="w-96 rounded-lg py-2 px-4 border-2 border-gray-500 hover:border-blue-500 pr-12"
+                  value={match}
+                  onChange={handlePassword}
                 />
 
                 {/* Show/Hide Password Button */}

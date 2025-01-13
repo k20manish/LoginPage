@@ -27,8 +27,8 @@ const BlockCard = [
       "Yusufpur",
     ],
      Amnour: [
-    "Dharampur Jafar",
-    "Basantpur",
+    <img src="/village.jpg" alt="" />,
+     <img src="/images1.jpeg" alt="" />,
     "Amnour Kalyan",
     "Amnour Harnarayan",
     "Dharhara Khurd",
