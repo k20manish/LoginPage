@@ -1,122 +1,133 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import BlockCard from "../block/BlockCard";
-// import { data } from "react-router-dom";
 
 const Dashboard = () => {
-   
-  let [currentblock, setcurrentblock] = useState(BlockCard[0]);
-  let [currentPnachayat,setCurrentPanchayat] = useState(BlockCard[0]?.panchayatName[0]);
-
-  const [activeTab, setActiveTab] = useState(); // Default active tab
-  const [activeBlocks, setActiveBlocks] = useState([]);
-  const [activePanchayat,setActivePanchayat] = useState([]);
+  const [currentBlock, setCurrentBlock] = useState(BlockCard[0]);
+  const [currentPanchayat, setCurrentPanchayat] = useState(
+    BlockCard[0]?.panchayatName[0]
+  );
+  const [activeBlockId, setActiveBlockId] = useState(BlockCard[0]?.id);
+  const [activePanchayatIndex, setActivePanchayatIndex] = useState(0);
 
   const tabs = ["number1", "number2", "number3", "number4"];
-  
-    
+  const [activeTab, setActiveTab] = useState(tabs[0]); // Default active tab
 
-  const handlePanchayat = (data) => {
-   
-    setcurrentblock(data);
-    console.log(currentblock);
-     // Toggle active state for the clicked block
-     setActiveBlocks(data.id);
+  const handlePanchayat = (block) => {
+    setCurrentBlock(block);
+    setActiveBlockId(block.id);
+
+    // Automatically select the first panchayat
+    if (block.panchayatName && block.panchayatName.length > 0) {
+      setCurrentPanchayat(block.panchayatName[0]);
+      setActivePanchayatIndex(0);
+    } else {
+      setCurrentPanchayat(null);
+      setActivePanchayatIndex(null);
+    }
   };
 
-  const handleWard = (punch,index) =>{
-    setCurrentPanchayat(punch);
-   setActivePanchayat(index)
-  
-  //  console.log(currentPnachayat);
-  }
-
+  const handleWard = (panchayat, index) => {
+    setCurrentPanchayat(panchayat);
+    setActivePanchayatIndex(index);
+  };
 
   return (
     <div className="h-screen w-screen bg-slate-50">
-      {/* Header section */}
-      <div className="h-1/5 flex justify-between items-center border-2 border-white mx-2 bg-gray-100 rounded-xl">
-        <div className="flex justify-center items-center">
-          <h1 className="text-3xl font-semibold ml-10">
-            Welcom <h1 className="font-normal text-xl">To,Saran Swachta Abhiyan</h1>
-            {/* <p className="font-normal text-2xl"></p> */}
-          </h1>
-          <img className="h-24 w-24 mx-10 mt-2" src="/swachta.png" alt="" />
-        </div>
-          <div className="flex gap-5 justify-center items-center mr-10">
-      {tabs.map((tab) => (
-        <h1
-          key={tab}
-          onClick={() => setActiveTab(tab)} // Set the active tab on click
-          className={`px-2 py-1 rounded-xl flex justify-center items-center cursor-pointer drop-shadow-md
-            ${
-              activeTab === tab
-                ? "bg-gray-400 text-white hover:px-3 hover:py-2" // Active tab styles
-                : "bg-gray-100 hover:bg-gray-400 hover:text-white hover:py-2 hover:px-3" // Inactive tab styles
-            }`}
-        >
-          {tab}
-        </h1>
-      ))}
-    </div>
-      </div>
-  
-  {/* Block section */}
-      <div className="grid grid-cols-12 h-fit gap-2 ">
-        <div className="bg-zinc-400  h-[500px] rounded-xl border-2 border-gray-300 col-span-3 gap-2 flex flex-wrap justify-center overflow-y-scroll m-1">
-          {BlockCard.map((data,id) => (
-            <p
-               key={id}
-              className={`bg-gray-100 h-24 w-24 rounded-lg cursor-pointer mt-1 mb-1  hover:text-black   flex justify-center items-center drop-shadow-md ${activeBlocks === data.id
-                ? "bg-gray-400 text-white  "
-                : "bg-gray-200 hover:bg-gray-400  hover:text-white   "
-              }`}
-              
-              onClick={() => handlePanchayat(data)}
-            >
-              {data.block}
-            </p>
-          ))}
-        </div>
+      {/* Header Section */}
+      <nav className="fixed top-0 left-0 right-0 bg-gray-200 text-gray-800 p-4 shadow-md z-10">
+        <div className="container mx-auto flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="/swachta.png"
+              alt="Logo"
+              className="h-12 w-12 mr-4 rounded-full"
+            />
+            <h1 className="text-2xl font-bold">Saran Swachta Abhiyan</h1>
+          </div>
 
-{/* panchayat section */}
-        <div className="grid col-span-9 bg-zinc-200 rounded-lg  h-full">
-          <div className="  h-64">
-               {currentblock && currentblock.panchayatName && (
-               <div className="bg-zinc-400 mx-5 rounded-xl border-2 border-gray-300 h-60 col-span-3 gap-2 flex flex-wrap justify-center  overflow-y-scroll mt-1">
-                  {currentblock.panchayatName.map((punch, index) => (
-                     <p
-                      key={index}
-                      className={`bg-gray-200 h-24 w-24 rounded-lg cursor-pointer mt-3 mb-1 hover:bg-gray-400 hover:text-white flex justify-center items-center drop-shadow-md ${  (activePanchayat === index) 
-                        ?  "bg-gray-500 text-white" 
-                        : "bg-gray-200 hover:bg-gray-400 hover:text-white"
-                      }`}
-                     onClick={() =>handleWard(punch,index)} >
-                     {punch}
-                     </p>
-                  ))}
-               </div>
-               )}
-          </div>
- 
- {/* ward section */}
-          <div className="   h-60">
-            {currentPnachayat && currentblock[currentPnachayat] &&  (
-               <div className="bg-zinc-400 mx-5 rounded-xl border-2 border-gray-300  h-60 col-span-3 gap-2 flex flex-wrap justify-center  overflow-y-scroll ">
-                  {currentblock[currentPnachayat].map((data, index) => (
-                     <p
-                     className="bg-gray-200 h-24 w-24 rounded-lg cursor-pointer my-2 hover:bg-gray-400 hover:text-white flex justify-center items-center drop-shadow-md"
-                     key={index}
-                     >
-                     {data}
-                     </p>
-                  ))}
-               </div>
-               )}
+          {/* Tabs */}
+          <div className="flex gap-6">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 rounded-lg ${
+                  activeTab === tab
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-700 hover:bg-blue-400 text-white"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
         </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="flex mt-20 h-[calc(100vh-5rem)]">
+        {/* Block Section (Left) */}
+        <aside className="w-1/4 bg-gray-200 p-4 rounded-xl shadow-md overflow-y-auto">
+          <h2 className="text-xl font-bold mb-4">Blocks</h2>
+          <div className="flex flex-col gap-3">
+            {BlockCard.map((block) => (
+              <button
+                key={block.id}
+                onClick={() => handlePanchayat(block)}
+                className={`p-3 rounded-lg text-lg font-medium ${
+                  activeBlockId === block.id
+                    ? "bg-blue-500 text-white"
+                    : "bg-white shadow hover:bg-blue-100"
+                }`}
+              >
+                {block.block}
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        {/* Panchayat and Ward Section (Center - Takes Remaining Width) */}
+        <section className="flex-1 bg-gray-100 p-4 rounded-xl shadow-md flex flex-col gap-6">
+          {/* Panchayat Section */}
+          <div className="flex-1 overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">Panchayats</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {currentBlock?.panchayatName?.map((panchayat, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleWard(panchayat, index)}
+                  className={`p-3 rounded-lg text-lg font-medium ${
+                    activePanchayatIndex === index
+                      ? "bg-blue-500 text-white"
+                      : "bg-white shadow hover:bg-blue-100"
+                  }`}
+                >
+                  {panchayat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Ward Section */}
+          <div className="h-64 overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">Wards</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {currentPanchayat &&
+                currentBlock[currentPanchayat]?.map((ward, index) => (
+                  <div
+                    key={index}
+                    className="p-3 bg-white shadow rounded-lg text-lg w-40 text-center"
+                  >
+                    {ward}
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 };
+
 export default Dashboard;

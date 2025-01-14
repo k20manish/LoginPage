@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css"; // Import AOS styles\
+import {useNavigate} from 'react-router-dom'
 
 const LoginPage = () => {
   useEffect(() => {
@@ -10,6 +11,8 @@ const LoginPage = () => {
       once: true, // Whether animation should happen only once
     });
   }, []);
+
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [inputValue,setInputValue] = useState("");
@@ -31,14 +34,12 @@ const LoginPage = () => {
 
   const handleSubmit = () =>{
      if((inputValue === userValue) && (match === userPassword)){
-      alert("Login successfully")
+        navigate("/Dashboard")
      }
      else{
       alert("username or password mismatch")
      }
   }
-
-  
 
   return (
     <div className=" h-screen w-screen flex flex-col   items-center">
