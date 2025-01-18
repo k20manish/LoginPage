@@ -37,57 +37,57 @@ const BlockCard = [
         {
           name: "Manorpur Jhakri",
           wardNo: 15,
-          image: "/images/ward15-2.jpg",
+          image: "/images4.jpg",
         },
         {
           name: "Hussepur",
           wardNo: 14,
-          image: "/images/ward14-2.jpg",
+          image: "/images5.jpeg",
         },
         {
           name: "Rasulpur",
           wardNo: 13,
-          image: "/images/ward13.jpg",
+          image: "/images6.jpg",
         },
         {
           name: "Aphar",
           wardNo: 15,
-          image: "/images/ward15-3.jpg",
+          image: "/images7.jpg",
         },
         {
           name: "Shekhpura",
           wardNo: 15,
-          image: "/images/ward15-4.jpg",
+          image: "/images8.jpg",
         },
         {
           name: "Tarwar",
           wardNo: 14,
-          image: "/images/ward14-3.jpg",
+          image: "/images9.webp",
         },
         {
           name: "Paiga Mitarsan",
           wardNo: 14,
-          image: "/images/ward14-4.jpg",
+          image: "/images10.jpg",
         },
         {
           name: "Koreya",
           wardNo: 15,
-          image: "/images/ward15-5.jpg",
+          image: "/images1.jpeg",
         },
         {
           name: "Katsa",
           wardNo: 14,
-          image: "/images/ward14-5.jpg",
+          image: "/images2.webp",
         },
         {
           name: "Madarpur",
           wardNo: 15,
-          image: "/images/ward15-6.jpg",
+          image: "/images10.jpg",
         },
         {
           name: "Parsa",
           wardNo: 15,
-          image: "/images/ward15-7.jpg",
+          image: "/images5.jpeg",
         },
   ],
   Baijalpur: [
