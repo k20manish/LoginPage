@@ -22,71 +22,124 @@ const BlockCard = [
       {
         name: "Amnour Harnarayan",
         wardNo: "1",
+<<<<<<< HEAD
         image: "/images/ward1.jpg",
+=======
+        image: "/images1.jpeg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Dharhara Khurd",
         wardNo: 14,
+<<<<<<< HEAD
         image: "/images/ward2.jpg",
+=======
+        image: "/images2.webp",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Dhorlahi Kaithal",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward3.jpg",
+=======
+        image: "/images3.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Manorpur Jhakri",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward4.jpg",
+=======
+        image: "/images4.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Hussepur",
         wardNo: 14,
+<<<<<<< HEAD
         image: "/images/ward5.jpg",
+=======
+        image: "/images5.jpeg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Rasulpur",
         wardNo: 13,
+<<<<<<< HEAD
         image: "/images/ward6.jpg",
+=======
+        image: "/images6.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Aphar",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward7.jpg",
+=======
+        image: "/images7.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Shekhpura",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward8.jpg",
+=======
+        image: "/images8.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Tarwar",
         wardNo: 14,
+<<<<<<< HEAD
         image: "/images/ward9.jpg",
+=======
+        image: "/images9.webp",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Paiga Mitarsan",
         wardNo: 14,
+<<<<<<< HEAD
         image: "/images/ward10.jpg",
+=======
+        image: "/images10.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Koreya",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward11.jpg",
+=======
+        image: "/images1.jpeg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Katsa",
         wardNo: 14,
+<<<<<<< HEAD
         image: "/images/ward12.jpg",
+=======
+        image: "/images2.webp",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Madarpur",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward13.jpg",
+=======
+        image: "/images10.jpg",
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
       },
       {
         name: "Parsa",
         wardNo: 15,
+<<<<<<< HEAD
         image: "/images/ward14.jpg",
         },
   ],
@@ -321,6 +374,242 @@ const BlockCard = [
       image: "/images/dumari/ward15.jpg",
     },
   ],
+=======
+        image: "/images5.jpeg",
+        },
+  ],
+  Balesara: [
+    {
+      name: "Ward 1",
+      wardNo: "1",
+      image: "/images/ward1.jpg",
+    },
+    {
+      name: "Ward 2",
+      wardNo: "2",
+      image: "/images/ward2.jpg",
+    },
+    {
+      name: "Ward 3",
+      wardNo: "3",
+      image: "/images/ward3.jpg",
+    },
+    {
+      name: "Ward 4",
+      wardNo: "4",
+      image: "/images/ward4.jpg",
+    },
+    {
+      name: "Ward 5",
+      wardNo: "5",
+      image: "/images/ward5.jpg",
+    },
+    {
+      name: "Ward 6",
+      wardNo: "6",
+      image: "/images/ward6.jpg",
+    },
+    {
+      name: "Ward 7",
+      wardNo: "7",
+      image: "/images/ward7.jpg",
+    },
+    {
+      name: "Ward 8",
+      wardNo: "8",
+      image: "/images/ward8.jpg",
+    },
+    {
+      name: "Ward 9",
+      wardNo: "9",
+      image: "/images/ward9.jpg",
+    },
+    {
+      name: "Ward 10",
+      wardNo: "10",
+      image: "/images/ward10.jpg",
+    },
+    {
+      name: "Ward 11",
+      wardNo: "11",
+      image: "/images/ward11.jpg",
+    },
+    {
+      name: "Ward 12",
+      wardNo: "12",
+      image: "/images/ward12.jpg",
+    },
+    {
+      name: "Ward 13",
+      wardNo: "13",
+      image: "/images/ward13.jpg",
+    },
+    {
+      name: "Ward 14",
+      wardNo: "14",
+      image: "/images/ward14.jpg",
+    },
+    {
+      name: "Ward 15",
+      wardNo: "15",
+      image: "/images/ward15.jpg",
+    },
+  ],
+  Daudpur: [
+    {
+      name: "Daudpur Ward 1",
+      wardNo: "1",
+      image: "/images/daudpur/ward1.jpg",
+    },
+    {
+      name: "Daudpur Ward 2",
+      wardNo: "2",
+      image: "/images/daudpur/ward2.jpg",
+    },
+    {
+      name: "Daudpur Ward 3",
+      wardNo: "3",
+      image: "/images/daudpur/ward3.jpg",
+    },
+    {
+      name: "Daudpur Ward 4",
+      wardNo: "4",
+      image: "/images/daudpur/ward4.jpg",
+    },
+    {
+      name: "Daudpur Ward 5",
+      wardNo: "5",
+      image: "/images/daudpur/ward5.jpg",
+    },
+    {
+      name: "Daudpur Ward 6",
+      wardNo: "6",
+      image: "/images/daudpur/ward6.jpg",
+    },
+    {
+      name: "Daudpur Ward 7",
+      wardNo: "7",
+      image: "/images/daudpur/ward7.jpg",
+    },
+    {
+      name: "Daudpur Ward 8",
+      wardNo: "8",
+      image: "/images/daudpur/ward8.jpg",
+    },
+    {
+      name: "Daudpur Ward 9",
+      wardNo: "9",
+      image: "/images/daudpur/ward9.jpg",
+    },
+    {
+      name: "Daudpur Ward 10",
+      wardNo: "10",
+      image: "/images/daudpur/ward10.jpg",
+    },
+    {
+      name: "Daudpur Ward 11",
+      wardNo: "11",
+      image: "/images/daudpur/ward11.jpg",
+    },
+    {
+      name: "Daudpur Ward 12",
+      wardNo: "12",
+      image: "/images/daudpur/ward12.jpg",
+    },
+    {
+      name: "Daudpur Ward 13",
+      wardNo: "13",
+      image: "/images/daudpur/ward13.jpg",
+    },
+    {
+      name: "Daudpur Ward 14",
+      wardNo: "14",
+      image: "/images/daudpur/ward14.jpg",
+    },
+    {
+      name: "Daudpur Ward 15",
+      wardNo: "15",
+      image: "/images/daudpur/ward15.jpg",
+    },
+  ],
+  Dumari: [
+    {
+      name: "Dumari Ward 1",
+      wardNo: "1",
+      image: "/images/dumari/ward1.jpg",
+    },
+    {
+      name: "Dumari Ward 2",
+      wardNo: "2",
+      image: "/images/dumari/ward2.jpg",
+    },
+    {
+      name: "Dumari Ward 3",
+      wardNo: "3",
+      image: "/images/dumari/ward3.jpg",
+    },
+    {
+      name: "Dumari Ward 4",
+      wardNo: "4",
+      image: "/images/dumari/ward4.jpg",
+    },
+    {
+      name: "Dumari Ward 5",
+      wardNo: "5",
+      image: "/images/dumari/ward5.jpg",
+    },
+    {
+      name: "Dumari Ward 6",
+      wardNo: "6",
+      image: "/images/dumari/ward6.jpg",
+    },
+    {
+      name: "Dumari Ward 7",
+      wardNo: "7",
+      image: "/images/dumari/ward7.jpg",
+    },
+    {
+      name: "Dumari Ward 8",
+      wardNo: "8",
+      image: "/images/dumari/ward8.jpg",
+    },
+    {
+      name: "Dumari Ward 9",
+      wardNo: "9",
+      image: "/images/dumari/ward9.jpg",
+    },
+    {
+      name: "Dumari Ward 10",
+      wardNo: "10",
+      image: "/images/dumari/ward10.jpg",
+    },
+    {
+      name: "Dumari Ward 11",
+      wardNo: "11",
+      image: "/images/dumari/ward11.jpg",
+    },
+    {
+      name: "Dumari Ward 12",
+      wardNo: "12",
+      image: "/images/dumari/ward12.jpg",
+    },
+    {
+      name: "Dumari Ward 13",
+      wardNo: "13",
+      image: "/images/dumari/ward13.jpg",
+    },
+    {
+      name: "Dumari Ward 14",
+      wardNo: "14",
+      image: "/images/dumari/ward14.jpg",
+    },
+    {
+      name: "Dumari Ward 15",
+      wardNo: "15",
+      image: "/images/dumari/ward15.jpg",
+    },
+  ],
+>>>>>>> 6f3fb43520ee67a391f98eb84145374d7dd9f7f0
   Ghorahat: [
     {
       name: "Ghorahat Harnarayan",
