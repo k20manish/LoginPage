@@ -10,7 +10,7 @@ const Chart = () => {
     // labels: ['Red', 'Blue', 'Yellow'],
     datasets: [
       {
-        label: 'My First Dataset',
+        // label: 'My First Dataset',
         data: [300, 100], // Data for the pie slices
         backgroundColor: ['rgb(255,0,0)' , 'rgb(0,128,0)'],
         hoverOffset: 4,

@@ -1,21 +1,25 @@
-import React from "react";
 import { Pie } from "react-chartjs-2";
 
-const PieChart = () => {
+const PieChart = ({ cleanAreas, dirtyAreas }) => {
+  const totalAreas = cleanAreas + dirtyAreas;
+
   const pieData = {
-    // labels: ["Clean Areas", "Dirty Areas", "Work in Progress"],
     datasets: [
       {
-        data: [50, 30, 20],
-        backgroundColor: ["#4caf50", "#f44336", "#ff9800"],
+        data: [cleanAreas, dirtyAreas], // Use the props dynamically
+        backgroundColor: ["#4caf50", "#f44336"], // Green for clean, red for dirty
       },
     ],
+    // labels: ["Clean Areas", "Dirty Areas"], // Add labels for the chart
   };
 
   return (
-    <div className="w-32 h-32">
+    <div className="w-28 h-28  flex flex-col">
       <Pie data={pieData} />
-    </div>
+      <div className="text-sm font-medium text-gray-700 flex justify-center">
+        {cleanAreas}/{totalAreas}  
+      </div>
+   </div>
   );
 };
 
