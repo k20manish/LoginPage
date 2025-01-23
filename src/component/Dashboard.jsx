@@ -4,8 +4,11 @@ import PieChart from "../block/PieChart";
 import PhotoCounter from "../block/PhotoCounter";
 import ChartBlock from "../block/ChartBlock";
 import ChartPanch from "../block/ChartPanch";
+import Slider from "react-slick";
 
 const Dashboard = () => {
+  const [currentWardIndex, setCurrentWardIndex] = useState(0);
+
   const [currentBlock, setCurrentBlock] = useState(BlockCard[0]);
   const [currentPanchayat, setCurrentPanchayat] = useState(
     BlockCard[0]?.panchayatName[0]
@@ -18,6 +21,20 @@ const Dashboard = () => {
   const [activePanchayatIndex, setActivePanchayatIndex] = useState(0);
 
   const [focusedWard, setFocusedWard] = useState(null);
+
+  const nextImage = () => {
+    if (currentWardIndex < currentBlock[currentPanchayat]?.length - 1) {
+      setCurrentWardIndex(currentWardIndex + 1);
+      setFocusedWard(currentBlock[currentPanchayat][currentWardIndex + 1]);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentWardIndex > 0) {
+      setCurrentWardIndex(currentWardIndex - 1);
+      setFocusedWard(currentBlock[currentPanchayat][currentWardIndex - 1]);
+    }
+  };
 
   const handlePanchayat = (block) => {
     setCurrentBlock(block);
@@ -143,7 +160,8 @@ const Dashboard = () => {
                 focusedWard ? "blur-sm" : ""
               }`}
             >
-              {currentPanchayat && currentBlock[currentPanchayat]?.length > 0 ? (
+              {currentPanchayat &&
+              currentBlock[currentPanchayat]?.length > 0 ? (
                 currentBlock[currentPanchayat]?.map((ward, index) => (
                   <div
                     key={index}
@@ -172,7 +190,7 @@ const Dashboard = () => {
 
             {focusedWard && (
               <div
-                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center mt-10"
+                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center mt-10 slider-container"
                 onClick={() => setFocusedWard(null)}
               >
                 <div
@@ -185,6 +203,28 @@ const Dashboard = () => {
                   >
                     ✖
                   </button>
+
+                  {/* Next and Previous Buttons */}
+                  <button
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-black p-2 rounded-full"
+                    onClick={prevImage}
+                    disabled={currentWardIndex === 0}
+                  >
+                    &lt;
+                  </button>
+
+                  <button
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-black p-2 rounded-full"
+                    onClick={nextImage}
+                    disabled={
+                      currentWardIndex ===
+                      currentBlock[currentPanchayat]?.length - 1
+                    }
+                  >
+                    &gt;
+                  </button>
+
+                  {/* Image Display */}
                   <img
                     src={focusedWard.image}
                     alt={`Ward ${focusedWard.name}`}

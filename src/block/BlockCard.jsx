@@ -298,7 +298,7 @@ const BlockCard = [
     {
       name: "Dumari Ward 11",
       wardNo: "11",
-      image: "/images/dumari/ward11.jpg",
+      image: "/images/ward11.jpg",
     },
     {
       name: "Dumari Ward 12",
