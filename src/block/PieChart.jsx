@@ -7,7 +7,7 @@ const PieChart = ({ cleanAreas, dirtyAreas }) => {
     datasets: [
       {
         data: [cleanAreas, dirtyAreas], // Use the props dynamically
-        backgroundColor: ["#4caf50", "#f44336"], // Green for clean, red for dirty
+        backgroundColor: ['rgb(166, 168, 50)', 'rgb(50, 168, 82)'], // Green for clean, red for dirty
       },
     ],
     // labels: ["Clean Areas", "Dirty Areas"], // Add labels for the chart

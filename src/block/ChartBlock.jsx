@@ -5,14 +5,14 @@ import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, Li
 // Register the necessary Chart.js components
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale);
 
-const Chart = () => {
+const ChartBlock = ({ WardImage, wardWithNoImage }) => {
+  const totalwardNo = WardImage + wardWithNoImage;
   const data = {
-    // labels: ['Red', 'Blue', 'Yellow'],
+  
     datasets: [
-      {
-        // label: 'My First Dataset',
-        data: [300, 100], // Data for the pie slices
-        backgroundColor: ['rgb(255,0,0)' , 'rgb(0,128,0)'],
+      {  
+        data: [WardImage, wardWithNoImage], // Data for the pie slices
+        backgroundColor: ['rgb(166, 168, 50)' , 'rgb(50, 168, 82)'],
         hoverOffset: 4,
       },
     ],
@@ -34,8 +34,11 @@ const Chart = () => {
     <div>
        
       <Pie data={data} options={options} />
+      <div>
+        {WardImage}/{totalwardNo}
+      </div>
     </div>
   );
 };
 
-export default Chart;
+export default ChartBlock;
