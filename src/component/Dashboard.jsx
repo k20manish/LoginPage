@@ -56,9 +56,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-gray-50 via-blue-50 to-white overflow-x-auto font-sans">
+    <div className=" h-screen w-screen  overflow-x-auto font-sans">
       {/* Header Section */}
-      <nav className="fixed top-0 left-0 right-0 bg-white text-gray-800 p-4 shadow-md z-10">
+      <nav className="bg-[#f1f1f1] fixed top-0 left-0 right-0 b text-gray-800  shadow-md z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-10">
             <div className="flex flex-col items-center">
@@ -72,7 +72,7 @@ const Dashboard = () => {
                 alt="Logo"
                 className="h-16 w-16 mr-4 rounded-full"
               />
-              <h1 className="text-2xl font-bold text-blue-600">
+              <h1 className="text-2xl font-bold text-[#4C585B]">
                 Saran Swachta Abhiyan
               </h1>
             </div>
@@ -80,18 +80,17 @@ const Dashboard = () => {
 
           {/* Dashboard Widgets Section */}
           <div className="flex gap-6 items-center">
-            <PieChart cleanAreas={40} dirtyAreas={10} />
-
             <PhotoCounter
               photosClicked={photosClicked}
               setPhotosClicked={setPhotosClicked}
             />
+            <PieChart cleanAreas={40} dirtyAreas={10} />
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div className="flex mt-40 h-[calc(87vh-5rem)] overflow-y-hidden">
+      <div className="flex mt-36 h-[calc(87vh-5rem)] overflow-y-hidden">
         {/* Block Section (Left) */}
         <aside className="w-52 bg-white p-5 rounded-xl shadow-md overflow-y-auto">
           <h2 className="text-2xl font-bold mb-4 text-gray-700">Blocks</h2>
@@ -102,20 +101,20 @@ const Dashboard = () => {
                 onClick={() => handlePanchayat(block)}
                 className={`p-2 rounded-lg text-lg font-medium flex flex-col gap-2 items-center transition-all ${
                   activeBlockId === block.id
-                    ? "bg-blue-100 text-blue-800"
-                    : "bg-gray-100 hover:bg-blue-50"
+                    ? "bg-[#7E99A3] text-[#4C585B]"
+                    : "bg-gray-100 hover:bg-[#F4EDD3]"
                 }`}
               >
                 <div className="App h-fit w-fit">
-                  <div className="border-b border-gray-200 px-2 text-sm text-gray-500">
+                  <div className="border-b border-gray-200 px-2 text-sm text-[#4C585B]">
                     30 Visits
                   </div>
-                  <div className="App h-16 w-16 mb-2 ml-4 flex justify-center mr-2">
+                  <div className="App h-16 w-16 mb-2 ml-4 flex justify-center mr-2 text-[#4C585B]">
                     <ChartBlock WardImage={55} wardWithNoImage={145} />
                   </div>
                 </div>
 
-                <div className="bg-gray-800 text-white px-2 py-1 rounded-md mt-4">
+                <div className="bg-[#4C585B] text-white px-2 py-1 rounded-md mt-4">
                   {block.block}
                 </div>
               </button>
@@ -126,29 +125,31 @@ const Dashboard = () => {
         {/* Panchayat and Ward Section (Center - Takes Remaining Width) */}
         <section className="flex-1 bg-gray-50 p-5 rounded-xl shadow-md flex flex-col space-y-2 max-w-full max-h-screen overflow-auto">
           {/* Panchayat Section */}
-          <div className="flex-2 bg-white pb-4 shadow-md rounded-xl max-h-1/2">
-            <h2 className="text-2xl font-bold mb-4 pl-2 text-gray-700">
+          <div className="flex-2 bg-white pb-4 shadow-md rounded-xl">
+            <h2 className="text-2xl font-bold mb-2 pl-2 text-gray-700">
               Panchayats
             </h2>
-            <div className="flex flex-wrap gap-2 justify-center max-w-full">
-              {currentBlock?.panchayatName?.map((panchayat, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleWard(panchayat, index)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium flex flex-col items-center justify-center transition-all ${
-                    activePanchayatIndex === index
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-100 hover:bg-blue-50"
-                  }`}
-                >
-                  <div className="App h-10 w-10 mb-2  flex justify-center">
-                    <ChartPanch wardImage={5} wardithoutImage={10} />
-                  </div>
-                  <div className="mt-4 bg-gray-800 text-white px-2 py-1 rounded-md mb-2">
-                    {panchayat}
-                  </div>
-                </button>
-              ))}
+            <div className="overflow-x-auto whitespace-nowrap px-4">
+              <div className="flex gap-2 justify-start min-w-max mb-4">
+                {currentBlock?.panchayatName?.map((panchayat, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleWard(panchayat, index)}
+                    className={`px-4  rounded-lg text-sm font-medium flex flex-col items-center justify-center transition-all ${
+                      activePanchayatIndex === index
+                        ? "bg-[#7E99A3] text-[#4C585B]"
+                        : "bg-gray-100 hover:bg-[#F4EDD3]"
+                    }`}
+                  >
+                    <div className="App h-10 w-10 mb-2 flex justify-center text-[#4C585B]">
+                      <ChartPanch wardImage={5} wardithoutImage={20} />
+                    </div>
+                    <div className="mt-4 bg-[#4C585B] text-white px-2 py-1 rounded-md mb-2">
+                      {panchayat}
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 

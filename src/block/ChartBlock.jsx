@@ -14,6 +14,7 @@ const ChartBlock = ({ WardImage, wardWithNoImage }) => {
         data: [WardImage, wardWithNoImage], // Data for the pie slices
         backgroundColor: ['rgb(166, 168, 50)' , 'rgb(50, 168, 82)'],
         hoverOffset: 4,
+        cutout: "40%",
       },
     ],
   };

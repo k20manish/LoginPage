@@ -15,6 +15,7 @@ const ChartPanch = ({wardImage,wardithoutImage}) => {
         data: [wardImage,wardithoutImage], // Data for the pie slices
         backgroundColor: ['rgb(166, 168, 50)' , 'rgb(50, 168, 82)'],
         hoverOffset: 4,
+        cutout: "40%",
       },
     ],
   };
@@ -34,7 +35,7 @@ const ChartPanch = ({wardImage,wardithoutImage}) => {
   return (
     <div>
        
-      <Pie data={data} options={options} />
+      <Pie data={data}  />
       <div>
         {wardImage}/{totalward}
       </div>
