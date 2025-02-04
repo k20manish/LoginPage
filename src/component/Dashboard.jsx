@@ -114,7 +114,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                <div className="bg-[#4C585B] text-white px-2 py-1 rounded-md mt-4">
+                <div className="bg-gray-300 text-[#262c2ee3] px-2 py-1 rounded-md mt-4">
                   {block.block}
                 </div>
               </button>
@@ -144,7 +144,7 @@ const Dashboard = () => {
                     <div className="App h-10 w-10 mb-2 flex justify-center text-[#4C585B]">
                       <ChartPanch wardImage={5} wardithoutImage={20} />
                     </div>
-                    <div className="mt-4 bg-[#4C585B] text-white px-2 py-1 rounded-md mb-2">
+                    <div className="mt-4 bg-gray-300 text-[#262c2ee3] px-2 py-1 rounded-md mb-2">
                       {panchayat}
                     </div>
                   </button>
@@ -174,7 +174,7 @@ const Dashboard = () => {
                       alt={`Ward ${ward.name}`}
                       className="w-full h-24 object-cover rounded-t-lg mb-2"
                     />
-                    <h3 className="text-lg font-semibold text-gray-800">
+                    <h3 className="text-lg font-semibold text-[#4C585B]">
                       {ward.name}
                     </h3>
                     <p className="text-sm text-gray-500">
