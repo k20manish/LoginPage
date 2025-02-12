@@ -81,10 +81,8 @@ const Dashboard = () => {
           </div>
 
           {/* Dashboard Widgets Section */}
-          <div className="flex items-center">
-           
-
-            <div className="flex gap-6 items-center">
+          <div className="flex items-center justify-center">
+            <div className="flex gap-6 items-center ">
               <PhotoCounter
                 photosClicked={photosClicked}
                 setPhotosClicked={setPhotosClicked}
@@ -93,9 +91,9 @@ const Dashboard = () => {
             </div>
             
              {/* showCase  */}
-            <div>
+             
               <ShowCase />
-            </div>
+             
           </div>
         </div>
       </nav>

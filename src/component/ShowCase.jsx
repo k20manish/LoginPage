@@ -58,8 +58,8 @@ const ShowCase = () => {
     <div className=" flex flex-col items-center justify-center bg-gray-100 p-4">
       <PDFDownloadLink document={<MyDocument />} fileName="notice_application.pdf">
         {({ loading }) => (
-          <button className="text-black px-4 py-2 rounded flex items-center mt-4 bg-blue-500  font-bold">
-            {loading ? "Generating PDF..." : "Download PDF"}
+          <button className="text-black px-4   rounded flex items-center      font-bold">
+            {loading ? "Generating PDF..." : <div ><img className="h-10 w-10" src="./download.png" alt="" /></div>}
           </button>
         )}
       </PDFDownloadLink>
