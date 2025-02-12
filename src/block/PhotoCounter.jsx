@@ -7,7 +7,7 @@ const PhotoCounter = ({ photosClicked, onPhotoUpload }) => {
       <p className="text-2xl text-[#4C585B]">{photosClicked}</p>
       <button
         onClick={onPhotoUpload}
-        className="mt-2 px-4 py-2 bg-gray-300 text-[#262c2ee3] rounded-lg hover:bg-[#7E99A3]"
+        className="mt-2 px-4 py-2 bg-gray-300 text-[#262c2ee3] rounded-lg hover:bg-[#7e99a3] hover:text-[#e7e7e5]"
       >
         Upload Photo
       </button>

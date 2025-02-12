@@ -4,7 +4,7 @@ import PieChart from "../block/PieChart";
 import PhotoCounter from "../block/PhotoCounter";
 import ChartBlock from "../block/ChartBlock";
 import ChartPanch from "../block/ChartPanch";
-import Slider from "react-slick";
+import ShowCase from "./ShowCase";
 
 const Dashboard = () => {
   const [currentWardIndex, setCurrentWardIndex] = useState(0);
@@ -13,6 +13,8 @@ const Dashboard = () => {
   const [currentPanchayat, setCurrentPanchayat] = useState(
     BlockCard[0]?.panchayatName[0]
   );
+
+  const [name,setName] = useState("User Name");
 
   const [userName, setUserName] = useState("Ward Name");
   const [photosClicked, setPhotosClicked] = useState(0);
@@ -58,12 +60,12 @@ const Dashboard = () => {
   return (
     <div className=" h-screen w-screen  overflow-x-auto font-sans">
       {/* Header Section */}
-      <nav className="bg-[#f1f1f1] fixed top-0 left-0 right-0 b text-gray-800  shadow-md z-10">
+      <nav className="bg-[#f1f1f1] fixed top-0 left-0 right-0  text-gray-800  shadow-md z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-10">
             <div className="flex flex-col items-center">
-              <img className="h-28 w-28" src="/profile.png" alt="" />
-              <h1 className="font-bold">User Name</h1>
+              <img className="h-16 w-16" src="/profile.png" alt="" />
+              <h1 className="font-bold">{name}</h1>
             </div>
             {/* Logo Section */}
             <div className="flex items-center">
@@ -79,12 +81,21 @@ const Dashboard = () => {
           </div>
 
           {/* Dashboard Widgets Section */}
-          <div className="flex gap-6 items-center">
-            <PhotoCounter
-              photosClicked={photosClicked}
-              setPhotosClicked={setPhotosClicked}
-            />
-            <PieChart cleanAreas={40} dirtyAreas={10} />
+          <div className="flex items-center">
+           
+
+            <div className="flex gap-6 items-center">
+              <PhotoCounter
+                photosClicked={photosClicked}
+                setPhotosClicked={setPhotosClicked}
+              />
+              <PieChart cleanAreas={40} dirtyAreas={10} />
+            </div>
+            
+             {/* showCase  */}
+            <div>
+              <ShowCase />
+            </div>
           </div>
         </div>
       </nav>

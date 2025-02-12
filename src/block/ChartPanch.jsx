@@ -7,6 +7,7 @@ ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale)
 
 const ChartPanch = ({wardImage,wardithoutImage}) => {
     const totalward = wardImage + wardithoutImage;
+    
   const data = {
      
     datasets: [
