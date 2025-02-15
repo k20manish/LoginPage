@@ -5,6 +5,7 @@ import PhotoCounter from "../block/PhotoCounter";
 import ChartBlock from "../block/ChartBlock";
 import ChartPanch from "../block/ChartPanch";
 import ShowCase from "./ShowCase";
+import PdfFile from "./PdfFile";
 
 const Dashboard = () => {
   const [currentWardIndex, setCurrentWardIndex] = useState(0);
@@ -92,7 +93,7 @@ const Dashboard = () => {
             
              {/* showCase  */}
              
-              <ShowCase />
+               <ShowCase/>
              
           </div>
         </div>
